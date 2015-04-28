@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class manTester {
     static ArrayList peopleList;
     static ArrayList studentList;
-    static ArrayList mixedList;
+    static ArrayList<Human> mixedList;
 
     public static void main(String args[]) {
-        System.out.println("--FÖRSTA UPPGIFTEN--");
+        System.out.println("--FÃ–RSTA UPPGIFTEN--");
         Human ulf = new Human(38, "Ulf");
         System.out.println(ulf.getAge() + " | " + ulf.getName());
         System.out.println(ulf.toString());
-        System.out.println(ulf + "\nNot Worky ");
+        System.out.println(ulf);
         System.out.println();
 
         peopleList = new ArrayList<Human>(15);
@@ -22,7 +22,6 @@ public class manTester {
         for (int i = 0; i < 15; i++) {
             Human newHuman = new Human();
             peopleList.add(newHuman);
-            newHuman.toString();
 
         }
         System.out.println("\n" +
@@ -30,7 +29,8 @@ public class manTester {
         for (int i = 0; i < peopleList.size(); i++) {
             System.out.println(peopleList.get(i));
         }
-
+        System.out.println("\n" +
+                "\n--TREDJE UPPGIFTEN--");
         for (int i = 0; i < 5; i++) {
             Human newHuman = new Human();
             mixedList.add(newHuman);
@@ -49,18 +49,17 @@ public class manTester {
 
 
             } catch (IllegalArgumentException e) {
-                System.out.println("Här slumpades det fel!" + e.getMessage());
+                System.out.println("HÃ¤r slumpades det fel!" + e.getMessage());
             }
         }
 
-        System.out.println("\n" +
-                "\n--TREDJE UPPGIFTEN--");
+
 
         for(int i=0;i<studentList.size();i++){
             System.out.println(studentList.get(i));
         }
 
-        System.out.println("\n\n--FJÄRDE UPPGIFTEN--");
+        System.out.println("\n\n--FJÃ„RDE UPPGIFTEN--");
 
         for(int i=0; i<mixedList.size();i++){
             System.out.println(mixedList.get(i));

@@ -13,8 +13,8 @@ public class Human {
     }
 
     public Human(int ageIn, String nameIn){
-        this.age = ageIn;
-        this.name = nameIn;
+        age = ageIn;
+        name = nameIn;
     }
 
     public static int makeAge(){
@@ -26,7 +26,7 @@ public class Human {
     }
 
     public String toString(){
-        return "namn:"+" "+this.getName()+", ålder: "+this.getAge();
+        return "namn:"+" "+this.getName()+", Ã¥lder: "+this.getAge();
     }
 
     public int getAge(){

@@ -14,6 +14,9 @@ public class Student extends Human{
             startYear = year;}
         else{
             throw new IllegalArgumentException("  "+String.valueOf(year)+"-2015+"+String.valueOf(getAge())+"<=15");
+
+
+
     }}
 
     public Student(){
@@ -33,7 +36,7 @@ public class Student extends Human{
     }
 
     public String toString(){
-        return super.toString()+" Började CSAMH år: "+getYear();
+        return super.toString()+" BÃ¶rjade CSAMH Ã¥r: "+getYear();
     }
 
 
