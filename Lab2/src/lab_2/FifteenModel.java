@@ -2,22 +2,23 @@ package lab_2;
 
 import java.util.Scanner;
 
-//OBS! Det behövs inga import-satser i FifteenModel.
-//FifteenModel innehåller ingen grafik !!!
+//OBS! Det behï¿½vs inga import-satser i FifteenModel.
+//FifteenModel innehï¿½ller ingen grafik !!!
 
 class FifteenModel implements Boardgame {
 	static int[][] playingField;
+    Square[][] squareField;
 	private static int xNull;
 	private static int yNull;
-	private String moveOK; //0 är ok, 1 är out of bounds, 2 är ej bredvid null-ruta, 3 är diagonalt
+	private String moveOK; //0 ï¿½r ok, 1 ï¿½r out of bounds, 2 ï¿½r ej bredvid null-ruta, 3 ï¿½r diagonalt
 	public Scanner inputScan;
 	
 	public FifteenModel() {
 		inputScan = new Scanner(System.in);
 		playingField = new int[4][4];
 		fill();
-		System.out.println("Skriv först y-koordinaten och därefter x-koordinaten. 0.0 är rutan uppe t.v." +
-				"\n" +" Notera att höger är ökande Y och nedåt är ökande X. Värden över 3 kommer inte att accepteras.");
+		System.out.println("Skriv fÃ¶rst y-koordinaten och dÃ¤refter x-koordinaten. 0.0 Ã¤r rutan uppe t.v." +
+				"\n" +" Notera att hÃ¶ger Ã¤r Ã¶kande Y och nedÃ¥t Ã¤r Ã¶kande X. VÃ¤rden Ã¶ver 3 kommer inte att accepteras.");
 	}
 
 	private static void fill(){
@@ -35,6 +36,23 @@ class FifteenModel implements Boardgame {
 		}
 	}
 
+    public Square[][] makeButtons(int n){
+        squareField = new Square[n][n];
+        String id;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(!(Integer.valueOf(i).equals(3) && Integer.valueOf(j).equals(3))){
+                    id = Integer.toString((i*4+j)+1);
+                    squareField[i][j] = new Square(id,j,i);
+                } else{
+                    squareField[i][j] = new Square("0", j, i);
+                }
+
+
+            }
+        }
+    return squareField;
+    }
 
 	@Override
 	public boolean move (int i, int j) {
@@ -58,17 +76,38 @@ class FifteenModel implements Boardgame {
 
 
 	}
+/*
+    public boolean move (Square one, Square two) {
+        if (!(i<4 || j<4) || (i<0 || j<0)) {
+            moveOK = "1";
+            return false;
+        } else if (Math.abs(i-xNull)>1) {
+            moveOK = "2";
+            return false;
+        } else if (Math.abs(j-yNull)>1) {
+            moveOK = "2";
+            return false;
+        } else if( Math.abs((Math.abs(j-yNull))-(Math.abs(i-xNull))) <1){
+            moveOK = "3";
+            return false;
+        } else {
+            moveOK = "0";
+            this.swap(i,j);
+            return true;
+        }
+    }*/
+
 
 	private void swap(int i, int j){
 		System.out.println(i+ "  "+j);
-		//Ta ut värdet på i,j
+		//Ta ut vï¿½rdet pï¿½ i,j
 		int tempVal = playingField[i][j];
-		//Sätt det värdet där xNull, yNull
+		//Sï¿½tt det vï¿½rdet dï¿½r xNull, yNull
 		playingField[xNull][yNull] = tempVal;
-		//Sätt xNull, yNull till i,j
+		//Sï¿½tt xNull, yNull till i,j
 		xNull = i;
 		yNull = j;
-		//Sätt null på nya xNull, yNull
+		//Sï¿½tt null pï¿½ nya xNull, yNull
 		playingField[xNull][yNull] = 0;
 
 	}
@@ -93,5 +132,5 @@ class FifteenModel implements Boardgame {
 
 
 // Implementera Boardgame-metoderna
-// Deklarera variabler och övriga metoder som ni anser behövs
-// som behövs för ett femtonspel
+// Deklarera variabler och ï¿½vriga metoder som ni anser behï¿½vs
+// som behï¿½vs fï¿½r ett femtonspel

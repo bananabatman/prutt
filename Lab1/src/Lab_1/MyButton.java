@@ -47,7 +47,6 @@ public class MyButton extends JButton implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.toggleState();
-		
 	}
 
 
