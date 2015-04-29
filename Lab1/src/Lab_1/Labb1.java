@@ -1,17 +1,28 @@
 package Lab_1;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+
+import javax.swing.BorderFactory;
 import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Labb1 extends JApplet {
 	static MyButton button;
 	static Color randomColor1;
 	static Color randomColor2;
 	static Random rand = new Random();
-	public static void main(String[] args) {
+	public void init() {
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		String[] args = new String[] {"2", "ett", "två", "tre", "fyra"};
 		String[] buttonText = Arrays.copyOfRange(args, 1,Integer.valueOf(args[0])*2+1);
 		ArrayList<MyButton> buttons = new ArrayList<MyButton>();
 		for(int i=0; i<Integer.valueOf(args[0])*2; i=i+2){
@@ -19,8 +30,11 @@ public class Labb1 extends JApplet {
 			randomColor2 = new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());
 			button = new MyButton(randomColor1, randomColor2, buttonText[i], buttonText[i+1]);
 			buttons.add(button);
+			c.add(button);
 		}
-		Window dispWindow = new Window(buttons);
+		//Window dispWindow = new Window(buttons);
+	
+
 
 	}
 

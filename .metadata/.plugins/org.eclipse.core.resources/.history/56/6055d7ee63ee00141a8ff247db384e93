@@ -1,0 +1,14 @@
+
+public class Uppgift1 {
+	
+	
+	//Objekt ordnande hierarkiskt i trädstruktur ska
+	//kunna behandlas som ett enstaka objekt
+	//a.k.a ett metodanrop på på det sammansatta objektet
+	//ska utföras på alla objektets delar
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

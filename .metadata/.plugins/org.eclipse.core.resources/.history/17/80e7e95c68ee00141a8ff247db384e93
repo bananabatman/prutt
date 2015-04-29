@@ -1,0 +1,13 @@
+package Uppg1;
+
+public class Leaf extends Component {
+
+	
+	//Löv - jeans, strumpor, tröja, tvål, schampo
+	
+	//Ex: hårspännen kan ligga i en påse som ligger 
+	//i en necessär tillsammans med tvål och 
+	//necessären 
+	
+	//minst 10 saker ska packas
+}

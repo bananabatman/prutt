@@ -1,0 +1,7 @@
+package Uppg1;
+
+import java.awt.Component;
+
+public class Leaf extends Component {
+
+}

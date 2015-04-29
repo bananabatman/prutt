@@ -1,0 +1,26 @@
+package Uppg1;
+
+public class Composite extends Component {
+
+	public Composite(String name, int weight) {
+		super(name, weight);
+		// TODO Auto-generated constructor stub
+	}
+	
+	//ÄR TRÄDET
+	//ÄR BEHÅLLARE
+	
+	//Objekt ordnande hierarkiskt i trädstruktur ska
+	//kunna behandlas som ett enstaka objekt
+	//a.k.a ett metodanrop på på det sammansatta objektet
+	//ska utföras på alla objektets delar (trädet)
+	//samma anrop på ett löv påverkar endast lövet
+	
+	
+	//Krävs minst 3 nivåer av sammansättning
+	//Ex: hårspännen kan ligga i en påse som ligger 
+		//i en necessär tillsammans med tvål och 
+		//necessären 
+	//Behållare i form av resväska, necessär, påse
+	
+}

@@ -1,0 +1,52 @@
+package Lab_1;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
+import javax.swing.BorderFactory;
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Labb1 extends JApplet {
+	static MyButton button;
+	static Color randomColor1;
+	static Color randomColor2;
+	static Random rand = new Random();
+	public void init() {
+		String[] buttonText = Arrays.copyOfRange(2, "ett", "två", "tre", "fyra");
+		ArrayList<MyButton> buttons = new ArrayList<MyButton>();
+		for(int i=0; i<2; i=i+2){
+			randomColor1 = new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());
+			randomColor2 = new Color(rand.nextFloat(),rand.nextFloat(),rand.nextFloat());
+			button = new MyButton(randomColor1, randomColor2, buttonText[i], buttonText[i+1]);
+			buttons.add(button);
+		}
+		Window dispWindow = new Window(buttons);
+		JApplet app = new JApplet();
+		
+		JLabel label = new JLabel("ELLA SYK \n FREDRIK HILDING", JLabel.CENTER);
+		Color textCol = new Color(255,255,255);
+		label.setForeground(textCol);
+		app.add(label);
+		Color newCol = new Color(0, 51, 0);
+		app.getContentPane().setBackground(newCol);
+		app.getRootPane().setBorder(BorderFactory.createLineBorder(Color.yellow, 10));
+		
+		
+		
+		JPanel panel = new JPanel();
+		for(int i=0; i<buttons.size(); i++ )
+			panel.add((Component) buttons.get(i));
+		
+		app.add(panel);
+		app.setLocation(null);
+
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package Uppg1;
+
+abstract class Component {
+	
+	private String name;
+	private int weight;
+
+	public Component(String name, int weight) {
+		//alla komponenter ska ha namn ochen vikt som instansvariabler
+		//initieras i konstruktorn när objekt skapas
+		this.name = name;
+		this.weight = weight;
+	}
+
+	public int getWeight() {
+		return 0;
+		//getWeight för en pryl/löv reurnerar endast prylens vikt
+		//för behållaren returneras hela behållarens vikt	
+	}
+	
+	public String toString() {
+		//för pryl: returnerar namnet
+		//för behållare: behållarens namn +
+		//namnen på alla saker i behållaren
+		return null;
+	}
+	
+	public abstract void add(Component c) {
+		
+	}
+	
+}

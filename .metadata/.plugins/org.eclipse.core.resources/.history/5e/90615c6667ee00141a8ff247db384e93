@@ -1,0 +1,6 @@
+package Uppg1;
+
+public class Component {
+	//alla komponenter ska ha en vikt som instansvariabel
+
+}

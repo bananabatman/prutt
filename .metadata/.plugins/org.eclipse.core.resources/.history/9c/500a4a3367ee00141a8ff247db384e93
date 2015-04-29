@@ -1,0 +1,7 @@
+package Uppg1;
+
+public class Leaf extends Component {
+
+	
+	//Löv - jeans, strumpor, tröja, tvål, schampo
+}

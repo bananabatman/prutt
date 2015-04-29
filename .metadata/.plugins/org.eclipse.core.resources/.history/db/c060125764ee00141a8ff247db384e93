@@ -1,0 +1,17 @@
+import java.awt.Component;
+
+
+public class Composite extends Component {
+	
+	
+	//Objekt ordnande hierarkiskt i trädstruktur ska
+	//kunna behandlas som ett enstaka objekt
+	//a.k.a ett metodanrop på på det sammansatta objektet
+	//ska utföras på alla objektets delar (trädet)
+	//samma anrop på ett löv påverkar endast lövet
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
