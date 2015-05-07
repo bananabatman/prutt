@@ -10,23 +10,19 @@ import javax.swing.JButton;
 public class Square extends JButton {
 	int xVal;
     int yVal;
-    String buttonText;
 	public Square(String value, int inX, int inY) { //, ActionListener e
-		JButton square = new JButton();
-        buttonText = value;
         this.xVal = inX;
         this.yVal = inY;
 		this.setPreferredSize(new Dimension(50,50));
-		this.setText(buttonText);
+		this.setText(value);
 		this.setForeground(Color.black);
-        //System.out.println("x: "+xVal+" y: "+yVal+" knapptext:"+value);
 	}
+    public void setLabelText(String inText){
+        this.setText(inText);
+    }
 
+    public String toString(){
+        return this.getText();
+    }
 
-       public ArrayList<Integer> getCoordinates() {
-           ArrayList coordinates = new ArrayList();
-           coordinates.add(this.xVal);
-           coordinates.add(this.yVal);
-           return coordinates;
-       }
 }

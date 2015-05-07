@@ -2,53 +2,66 @@ package lab_2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
-class ViewControl extends JFrame implements ActionListener {
-
-    private FifteenModel game;
-    private int size;
+class ViewControl implements ActionListener {
+    public FifteenModel game;
+    public GameGrid grid;
     private Square[][] board;        // Square �r subklass till JButton
-    private JLabel mess = new JLabel();
     ViewControl (FifteenModel gm, int n){  // OK med fler parametrar om ni vill!
         this.game = gm;
-        board = gm.makeButtons(n);
-        GameGrid grid = new GameGrid(board);
+        board = makeButtons(n);
+        grid = new GameGrid(board);
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 board[i][j].addActionListener(this);
             }
         }
-
-        grid.display(board);
-    	grid.pack();
-    	grid.setVisible(true);
-    }
-
-    public static void main(String[] args){
-        FifteenModel newMod = new FifteenModel();
-        ViewControl newView = new ViewControl(newMod, Integer.valueOf(args[0]));
     }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-        int moveX = ((Square)e.getSource()).getCoordinates().get(0);
-        int moveY = ((Square)e.getSource()).getCoordinates().get(1);
-        System.out.println(moveX+" <x  y> "+moveY+"   "+((Square) e.getSource()).buttonText);
-        System.out.println(e.getSource());
-        //kallar på move, om move returnerar true
-            //Kör swap
-                //swap gör get och set coordinates
-            //repaint ?
-            //15model getmessage
-        //annars
-            //fifteenmodel printar getmessage
+        int i = ((Square)e.getSource()).xVal;
+        int j = ((Square)e.getSource()).yVal;
+        if(game.move(i, j)){
+            reLabelButtons();
+            grid.update(game.getMessage());
+        } else {
+            grid.update(game.getMessage());
+        }
+
     }
+
+    public void reLabelButtons() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                board[i][j].setLabelText(game.getStatus(i,j));
+            }
+        }
+    }
+
+    private void boardPrinter(){
+        for (int i=0; i<4; i++) {
+            for (int j=0; j<4; j++)
+                System.out.print("  " + board[i][j].toString()); // getStatus
+            System.out.println();
+        }
+    }
+
+    public Square[][] makeButtons(int n){
+        Square[][] squareField = new Square[n][n];
+        String id;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(!(Integer.valueOf(i).equals(3) && Integer.valueOf(j).equals(3))){
+                    id = Integer.toString((i*4+j)+1);
+                    squareField[i][j] = new Square(game.getStatus(i,j),i,j);
+                } else{
+                    squareField[i][j] = new Square(game.getStatus(i,j), i, j);
+                }
+            }
+        }
+        return squareField;
+    }
+
+
 }
-//for i,j -> read text -> create button -> put button in board-array
-/*
-TODO: Connect to boardgame
-TODO: Fix move-logic for objects
-TODO: Set-coordinates metod
-*/
