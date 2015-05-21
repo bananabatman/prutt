@@ -7,6 +7,6 @@ public class runMemory {
 
     public static void main(String[] args){
         MemoryGame newMod = new MemoryGame();
-        ViewControl newView = new ViewControl(newMod, Integer.valueOf(args[0]));
+        ViewControl newView = new ViewControl(newMod, Integer.valueOf("4"));
     }
 }

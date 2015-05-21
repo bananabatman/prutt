@@ -1,9 +1,9 @@
 package Memory;
 
-import jdk.nashorn.internal.codegen.MethodEmitter;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 
 class ViewControl implements ActionListener {
     public MemoryGame game;
@@ -18,21 +18,19 @@ class ViewControl implements ActionListener {
                 board[i][j].addActionListener(this);
             }
         }
-        grid.pack();
-        grid.setVisible(true);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+	@Override
+	public void actionPerformed(ActionEvent e) {
         int i = ((Square)e.getSource()).xVal;
         int j = ((Square)e.getSource()).yVal;
         if(game.move(i, j)){
             reLabelButtons();
-            grid.update(board);
-            System.out.println(game.getMessage());
+            grid.update(game.getMessage());
         } else {
-            System.out.println(game.getMessage());
+            grid.update(game.getMessage());
         }
+
     }
 
     public void reLabelButtons() {
@@ -53,9 +51,11 @@ class ViewControl implements ActionListener {
 
     public Square[][] makeButtons(int n){
         Square[][] squareField = new Square[n][n];
+        String id;
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(!(Integer.valueOf(i).equals(3) && Integer.valueOf(j).equals(3))){
+                    id = Integer.toString((i*4+j)+1);
                     squareField[i][j] = new Square(game.getStatus(i,j),i,j);
                 } else{
                     squareField[i][j] = new Square(game.getStatus(i,j), i, j);
@@ -64,4 +64,6 @@ class ViewControl implements ActionListener {
         }
         return squareField;
     }
+
+
 }

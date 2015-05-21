@@ -1,0 +1,58 @@
+<Biosf�r namn="Liv"> �r allt som fortplantar sej
+<Rike namn="V�xter"> kan inte f�rflytta sej
+<Division namn="Kryptogamer"> har inte synliga k�nsdelar
+<Klass namn="Ormbunkar"> har blad och k�rl
+</Klass>
+<Klass namn="Alger"> �r r�da, gr�na eller bruna
+</Klass>
+</Division>
+<Division namn="Fanerogamer"> har st�ndare och pistiller
+<Klass namn="Enhj�rtbladiga"> kallas monokotyledoner
+</Klass>
+<Klass namn="Tv�hj�rtbladiga"> kallas dikotyledoner
+<Familj namn="Sm�rblomsv�xter"> kallas ranunkler
+<Art namn="Sm�rblomma"> �r gul som solen
+</Art>
+<Art namn="Vitsippa"> �r Anemone nemorosa
+</Art>
+<Art namn="Bl�sippa"> �r Hepatica nobilis
+</Art>
+</Familj>
+<Familj namn="Korgblommiga"> kallas kompositer
+<Art namn="Maskros"> �r ett besv�rligt ogr�s
+</Art>
+<Art namn="Tussilago"> kallas h�sthov och hosth�v
+</Art>
+</Familj>
+</Klass>
+</Division>
+</Rike>
+<Rike namn="Djur"> kan f�rflytta sej
+<Division namn="D�ggdjur"> f�der levande ungar
+<Art namn="Schimpanser"> �r v�ra kusiner
+</Art>
+<Art namn="M�nniskor"> �r vi alla
+</Art>
+</Division>
+<Division namn="F�glar"> l�gger �gg och flyger
+<Art namn="M�s"> gillar Vaxholmsb�tar
+</Art>
+<Art namn="Mes"> �r en feg f�gel
+</Art>
+</Division>
+</Rike>
+<Rike namn="Svampar"> �r varken djur eller v�xter
+<Ordning namn="Soppar"> har r�r under hatten
+<Art namn="Karljohan"> �r v�r st�rsta matsvamp
+</Art>
+<Art namn="Sm�rsopp"> �r den gulaste svampen
+</Art>
+</Ordning>
+<Sl�kte namn="Flugsvampar"> b�r man inte �ta
+<Art namn="Vit flugsvamp"> d�r man av
+</Art>
+<Art namn="R�d flugsvamp"> f�r man magknip av
+</Art>
+</Sl�kte>
+</Rike>
+</Biosf�r>
